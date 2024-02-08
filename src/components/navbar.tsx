@@ -14,6 +14,8 @@ import {
   XMarkIcon,
   Bars3Icon,
 } from "@heroicons/react/24/solid";
+import Link from "next/link";
+import Image from "next/image";
 
 const NAV_MENU = [
   {
@@ -76,9 +78,14 @@ export function Navbar() {
           className="z-50 mt-6 relative border-0 pr-3 py-3 pl-6"
         >
           <div className="flex items-center justify-between">
-            <Typography color="blue-gray" className="text-lg font-bold">
-              Material Tailwind
-            </Typography>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logos/company_logo.png" // Adjust the path as per your project structure
+                width={100}
+                height={100}
+                alt="Logo"
+              />
+            </Link>
             <ul className="ml-10 hidden items-center gap-8 lg:flex">
               {NAV_MENU.map(({ name, icon: Icon, href }) => (
                 <NavItem key={name} href={href}>
