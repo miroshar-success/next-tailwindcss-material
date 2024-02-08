@@ -21,19 +21,17 @@ function Hero() {
               color="blue-gray"
               className="lg:text-5xl !leading-snug text-3xl lg:max-w-3xl"
             >
-              Unlock the Power of the Web with Our Expert Courses
+              Senior Frontend Engineer
             </Typography>
             <Typography variant="lead" className="mb-10 mt-6 !text-gray-900">
-              Are you ready to embark on an exciting journey into the world of
-              web development? Look no further! We are your trusted partner for
-              mastering the art of web development.
+            Front-End Engineer with 6+ years of experience. Skilled in crafting intuitive, responsive web interfaces that engage and delight users.
             </Typography>
-            <div className="mb-8 flex justify-center gap-4 lg:justify-start">
+            {/* <div className="mb-8 flex justify-center gap-4 lg:justify-start">
               <Button color="gray">view all courses</Button>
               <Button color="gray" variant="outlined">
                 see pricing
               </Button>
-            </div>
+            </div> */}
             <div className="grid grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4 lg:justify-start">
               <Image
                 width={144}

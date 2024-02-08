@@ -19,7 +19,7 @@ export default function Campaign() {
       <OutImpressiveStats />
       <CoursesCategories />
       <ExploreCourses />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Events />
       <StudentsFeedback />
       <TrustedCompany />

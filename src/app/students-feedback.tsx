@@ -7,23 +7,23 @@ import { Typography } from "@material-tailwind/react";
 const FEEDBACKS = [
   {
     feedback:
-      "The instructors are top-notch, and the hands-on approach to learning is incredibly effective.",
+      "Oskar is awesome as a Frontend Developer. He always delivered task in define time.",
     client: "Jessica Devis",
-    title: "Web Developer @ MARKETING DIGITAL LTD.",
+    title: "CTO @ Sapien Company.",
     img: "/image/avatar1.jpg",
   },
   {
     feedback:
-      "I went from knowing nothing about web development to landing my dream job as a frontend developer.",
+      "I have worked with Oskar at this time. Oskar always collaborated closely with me and supported me. And I am very happy to get opportunity with him.",
     client: "Linde Michel",
-    title: "Web Developer @ APPLE INC.",
+    title: "Backend Developer @ Angry Nerd Company.",
     img: "/image/avatar3.jpg",
   },
   {
     feedback:
-      "The courses are structured well, and the projects helped me build a strong portfolio.",
+      "I think Oskar is Senior frontend developer with high skill in React. He is talent in this. He implemented all requirements correctly and perfectly and users are satisfied with interface.",
     client: "Misha Stam",
-    title: "Web Developer @ APPLE INC.",
+    title: "Project Manager @ Insure DAO.",
     img: "/image/avatar2.jpg",
   },
 ];
@@ -34,15 +34,13 @@ export function StudentsFeedback() {
       <div className="container mx-auto">
         <div className="mb-16 flex flex-col items-center w-full">
           <Typography variant="h2" color="blue-gray" className="mb-2">
-            What Our Students Are Saying
+            What My Clients Are Saying
           </Typography>
           <Typography
             variant="lead"
             className="mb-10 max-w-3xl lg:text-center !text-gray-500"
           >
-            Our mission is to empower individuals with the knowledge and skills
-            they need to succeed in the world of web development. But don&apos;t
-            just take our word for it.
+            My unwavering dedication to client satisfaction drives me to craft seamless user experiences and responsive interfaces that exceed expectations, ensuring that every project reflects the highest standards of quality and innovation.
           </Typography>
         </div>
         <div className="grid gap-x-8 gap-y-12 lg:px-32 grid-cols-1 md:grid-cols-3">

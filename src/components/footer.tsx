@@ -83,7 +83,7 @@ export function Footer() {
           </a>{" "}
           by{" "}
           <a href="https://www.creative-tim.com" target="_blank">
-            Creative Tim
+            Oskar Mast
           </a>
           .
         </Typography>
