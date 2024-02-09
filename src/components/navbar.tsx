@@ -95,13 +95,15 @@ export function Navbar() {
               ))}
             </ul>
             <div className="hidden items-center gap-4 lg:flex">
-              <Button variant="text">Log in</Button>
-              <a
+              <Link href="/login">
+                <Button color="gray">Log in</Button>
+              </Link>
+              {/* <a
                 href="https://www.material-tailwind.com/blocks"
                 target="_blank"
               >
                 <Button color="gray">Blocks</Button>
-              </a>
+              </a> */}
             </div>
             <IconButton
               variant="text"
@@ -127,13 +129,15 @@ export function Navbar() {
                 ))}
               </ul>
               <div className="mt-6 mb-4 flex items-center gap-4">
-                <Button variant="text">Log in</Button>
-                <a
+                <Link href="/login">
+                  <Button color="gray">Log in</Button>
+                </Link>
+                {/* <a
                   href="https://www.material-tailwind.com/blocks"
                   target="_blank"
                 >
                   <Button color="gray">blocks</Button>
-                </a>
+                </a> */}
               </div>
             </div>
           </Collapse>
