@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/solid";
 import {
   Card,
@@ -14,6 +15,7 @@ import {
 } from "@material-tailwind/react";
 
 export function LoginCard() {
+  const router = useRouter();
   // State to store form data and validation status
   const [formData, setFormData] = useState({
     email: '',
@@ -58,6 +60,10 @@ export function LoginCard() {
 
         const data = await response.json();
         setMessage(data.message);
+        if(data.status == '200' && data.role == 'admin'){
+          router.push('/admin');
+        }
+        else router.push('/');
       } catch (error) {
         console.error('Error Login user:', error);
       }

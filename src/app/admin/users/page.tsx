@@ -1,6 +1,6 @@
 import { lusitana } from "@/components/fonts";
-// import Search from "@/app/ui/search";
-// import Table from '@/app/ui/invoices/table';
+import Search from "@/components/admin/search";
+import Table from '@/components/admin/users/table';
 // import { CreateInvoice } from "@/app/ui/invoices/buttons";
 import { InvoicesTableSkeleton } from "@/components/skeletons";
 import { Suspense } from "react";
@@ -30,11 +30,10 @@ export default async function Page({
                 <h1 className={`${lusitana.className} text-2xl`}>Users</h1>
             </div>
             <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-                {/* <Search placeholder="Search invoices..."/>
-                <CreateInvoice /> */}
+                <Search placeholder="Search users..."/>
             </div>
             <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
-                {/* <Table query={query} currentPage={currentPage} /> */}
+                <Table query={query} currentPage={currentPage} />
             </Suspense>
             <div className="mt-5 flex w-full justify-center">
                 {/* <Pagination totalPages={totalPages} /> */}

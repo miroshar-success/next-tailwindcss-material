@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/solid";
 import {
   Card,
@@ -14,6 +15,7 @@ import {
 } from "@material-tailwind/react";
 
 export function RegisterCard() {
+  const router = useRouter();
   // State to store form data and validation status
   const [formData, setFormData] = useState({
     email: '',
@@ -48,6 +50,9 @@ export function RegisterCard() {
 
         const data = await response.json();
         setMessage(data.message);
+        if(data.status == '201'){
+          router.push('/');
+        }
       } catch (error) {
         console.error('Error registering user:', error);
       }
