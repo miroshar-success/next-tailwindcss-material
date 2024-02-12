@@ -3,6 +3,8 @@
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import User from "../../../models/User";
+import { connectToDatabase } from "../../../db";
 
 const FormSchema = z.object({
   id: z.string(),
@@ -27,17 +29,9 @@ export async function updateUser(
 ) {
   const role = formData.get("role");
   try {
-    const url = `http:/localhost:3000/api/userUpdateById?id=${id}`;
-    const response = await fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        role: role,
-      }),
-    });
-    const { message, updatedUser } = await response.json();
+    await connectToDatabase();
+    const updatedUser = await User.findByIdAndUpdate(id, { role });
+
     console.log("Successfully updated.");
   } catch (error) {
     console.error("Error Fetching user:", error);
@@ -49,16 +43,9 @@ export async function updateUser(
 
 export async function deleteUser(id: string) {
   try {
-    const url = `http:/localhost:3000/api/userDeleteById?id=${id}`;
-    const response = await fetch(url, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (response.ok) {
-      console.log("Successfully deleted.");
-    }
+    await connectToDatabase();
+    const deletedUser = await User.findByIdAndDelete(id);
+    console.log("Successfully deleted.");
   } catch (error) {
     console.error("Error Fetching user:", error);
   }

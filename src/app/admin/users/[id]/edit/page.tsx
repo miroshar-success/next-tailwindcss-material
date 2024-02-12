@@ -1,29 +1,23 @@
+'use server';
+
 import Form from "@/components/admin/users/edit-form";
 import Breadcrumbs from "@/components/admin/users/breadcrumbs";
-import { Metadata } from "next";
 import notFound from "./not-found";
 import { UserForm } from "@/app/lib/definitions";
+import User from "../../../../../../models/User";
+import { connectToDatabase } from "../../../../../../db";
 
-export const metadata: Metadata = {
-  title: "User Edit",
-};
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
   let data: UserForm = {
     id: "",
     email: "",
     createdAt: new Date(),
-    role: "user",
+    role: "",
   };
   try {
-    const url = `http:/localhost:3000/api/userById?id=${id}`;
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const { user } = await response.json();
+    await connectToDatabase();
+    const user = await User.findById(id);
     if (!user) {
       notFound();
     }

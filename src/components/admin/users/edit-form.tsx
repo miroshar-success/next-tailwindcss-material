@@ -3,10 +3,7 @@
 import { useFormState } from 'react-dom';
 import { UserForm } from '@/app/lib/definitions';
 import {
-  CheckIcon,
-  ClockIcon,
   AtSymbolIcon,
-  UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from './button';
@@ -20,6 +17,7 @@ export default function EditInvoiceForm({
   const initialState = { message: null, error: {}};
   const updateUserWithId = updateUser.bind(null, user.id);
   const [state, dispatch] = useFormState(updateUserWithId, initialState);
+  console.log(user);
   return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
