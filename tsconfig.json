@@ -33,8 +33,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
-, "pages/api/user.js"  ],
+    ".next/types/**/*.ts",
+    "src/api/user.js"
+  ],
   "exclude": [
     "node_modules"
   ]

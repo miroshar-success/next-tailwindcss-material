@@ -6,6 +6,7 @@ export type User = {
   id: string;
   email: string;
   password: string;
+  role: string;
 };
 
 export type FormattedUsersTable = {
@@ -13,8 +14,9 @@ export type FormattedUsersTable = {
   email: string;
   role: string;
 };
-
-// export type CustomerField = {
-//   id: string;
-//   name: string;
-// };
+export type UserForm = {
+  id: string;
+  email: string;
+  createdAt: Date;
+  role: string;
+};

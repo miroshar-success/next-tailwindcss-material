@@ -17,7 +17,6 @@ export default async function handler(req, res) {
             }
 
             // Compare the provided password with the hashed password stored in the database
-            console.log(password);
             const isPasswordValid = await bcrypt.compare(password, user.password);
             if (!isPasswordValid) {
                 return res.status(401).json({ message: 'Invalid password', status: '401' });

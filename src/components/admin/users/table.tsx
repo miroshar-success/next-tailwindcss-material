@@ -19,7 +19,6 @@ export default async function UsersTable({
       },
     });
     users = [...users, await response.json()];
-    console.log(users[0]);
   } catch (error) {
     console.error('Error Fetching user:', error);
   }
@@ -29,7 +28,7 @@ export default async function UsersTable({
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
           <div className="md:hidden">
-            {users[0].users?.map((user) => (
+            {users[0]?.users && users[0].users.map((user) => (
               <div
                 key={user._id}
                 className="mb-2 w-full rounded-md bg-white p-4"
@@ -46,8 +45,8 @@ export default async function UsersTable({
                     {/* <p> 2023.2.14 </p> */}
                   </div>
                   <div className="flex justify-end gap-2">
-                    <UpdateUser id={user.id} />
-                    <DeleteUser id={user.id} />
+                    <UpdateUser id={user._id} />
+                    <DeleteUser id={user._id} />
                   </div>
                 </div>
               </div>
@@ -71,7 +70,7 @@ export default async function UsersTable({
               </tr>
             </thead>
             <tbody className="bg-white">
-              {users[0].users?.map((user) => (
+              {users[0]?.users && users[0].users?.map((user) => (
                 <tr
                   key={user._id}
                   className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
@@ -88,8 +87,8 @@ export default async function UsersTable({
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      <UpdateUser id={user.id} />
-                      <DeleteUser id={user.id} />
+                      <UpdateUser id={user._id} />
+                      <DeleteUser id={user._id} />
                     </div>
                   </td>
                 </tr>
